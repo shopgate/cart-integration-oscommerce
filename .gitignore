@@ -1,0 +1,12 @@
+/oscommerce.zip
+/.buildpath
+/osCommerce.zip
+/.project
+/nbproject
+/.settings
+/.idea
+src/ext/modules/shopgate/vendor
+/.php_cs.cache
+/.php-cs.cache
+/release/package
+shopgate-oscommerce-integration.zip

@@ -1,0 +1,11 @@
+src/admin/shopgate.php                                      admin/shopgate.php
+src/admin/includes/boxes/shopgate.php                       admin/includes/boxes/shopgate.php
+src/ext/modules/shopgate/*                                  ext/modules/shopgate
+src/includes/languages/english/modules/payment/shopgate.php includes/languages/english/modules/payment/shopgate.php
+src/includes/languages/german/modules/payment/shopgate.php  includes/languages/german/modules/payment/shopgate.php
+src/includes/languages/greek/modules/payment/shopgate.php   includes/languages/greek/modules/payment/shopgate.php
+src/includes/languages/polish/modules/payment/shopgate.php  includes/languages/polish/modules/payment/shopgate.php
+src/includes/languages/french/modules/payment/shopgate.php  includes/languages/french/modules/payment/shopgate.php
+src/includes/languages/dutch/modules/payment/shopgate.php   includes/languages/dutch/modules/payment/shopgate.php
+src/includes/languages/espanol/modules/payment/shopgate.php includes/languages/espanol/modules/payment/shopgate.php
+src/includes/modules/payment/shopgate.php                   includes/modules/payment/shopgate.php
