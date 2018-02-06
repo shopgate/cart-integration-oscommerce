@@ -18,7 +18,7 @@
  * @copyright Shopgate Inc
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
-define("SHOPGATE_PLUGIN_VERSION", "2.9.36");
+define("SHOPGATE_PLUGIN_VERSION", "2.9.37");
 
 if (!defined('TABLE_ORDERS_SHOPGATE_ORDER')) {
     define('TABLE_ORDERS_SHOPGATE_ORDER', 'orders_shopgate_order');

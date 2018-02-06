@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 
-## 2.9.37
+## [2.9.37] - 2018-02-06
 ### Changed
 - migrated Shopgate integration for osCommerce to GitHub
 - uses Shopgate Cart Integartion SDK version 2.9.71
@@ -376,4 +376,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 2.1.0
 - new plugin version released
 
-[Unreleased]: https://github.com/shopgate/cart-integration-oscommerce/compare/2.9.66...HEAD
+[Unreleased]: https://github.com/shopgate/cart-integration-oscommerce/compare/2.9.37...HEAD
+[2.9.37]: https://github.com/shopgate/cart-integration-oscommerce/tree/2.9.37
+
