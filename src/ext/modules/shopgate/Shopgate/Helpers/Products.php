@@ -96,7 +96,6 @@ class Shopgate_Helpers_Products extends ShopgateObject
         $attributes   = $sgProduct->getAttributes();
         $dbAttributes = array();
         foreach ($attributes as $attribute) {
-
             $query  = "SELECT 
                     po.products_options_name AS `name`,
                     pov.products_options_values_name AS `value`

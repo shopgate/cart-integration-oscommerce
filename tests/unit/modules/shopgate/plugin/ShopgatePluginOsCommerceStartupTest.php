@@ -19,14 +19,13 @@
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
 
-namespace shopgate\plugin;
 
 class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var \ShopgateConfigOsCommerce|\PHPUnit_Framework_MockObject_MockObject */
+    /** @var ShopgateConfigOsCommerce|PHPUnit_Framework_MockObject_MockObject */
     private $shopgateConfigOsCommerceMock;
 
-    /** @var \ShopgatePluginOsCommerce|\PHPUnit_Framework_MockObject_MockObject */
+    /** @var ShopgatePluginOsCommerce|PHPUnit_Framework_MockObject_MockObject */
     private $subjectUnderTest;
 
     public function setUp()
@@ -37,14 +36,14 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
         defined('TABLE_CURRENCIES') ? : define('TABLE_CURRENCIES', 'mock_currency');
         defined('TABLE_TAX_RATES') ? : define('TABLE_TAX_RATES', 'mock_tax_rate');
 
-        $this->shopgateConfigOsCommerceMock = $this->getMock(\ShopgateConfigOsCommerce::class);
-        $this->subjectUnderTest             = $this->getMockBuilder(\ShopgatePluginOsCommerce::class)
+        $this->shopgateConfigOsCommerceMock = $this->getMock(ShopgateConfigOsCommerce::class);
+        $this->subjectUnderTest             = $this->getMockBuilder(ShopgatePluginOsCommerce::class)
                                                    ->disableOriginalConstructor()
                                                    ->setMethods(
-                                                       [
+                                                       array(
                                                            'createNewOsCommerceConfig', 'wrapperPerformQuery',
                                                            'wrapperPerformFetchArray'
-                                                       ]
+                                                       )
                                                    )
                                                    ->getMock()
         ;
@@ -67,8 +66,8 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
         ;
 
         $this->setExpectedExceptionRegExp(
-            \ShopgateLibraryException::class, '/Error selecting language/',
-            \ShopgateLibraryException::PLUGIN_DATABASE_ERROR
+            ShopgateLibraryException::class, '/Error selecting language/',
+            ShopgateLibraryException::PLUGIN_DATABASE_ERROR
         );
 
         $this->subjectUnderTest->startup();
@@ -80,7 +79,7 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
      * @dataProvider getInvalidLanguageResultFixtures
      */
     public function testWhenPluginIsStartedAndLanguageFromConfigurationIsFoundButIncompleteOrInvalidStartupWillFail(
-        array $language
+        $language
     ) {
         $this->shopgateConfigOsCommerceMock->expects(static::once())
                                            ->method('getLanguage')
@@ -100,8 +99,8 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
         ;
 
         $this->setExpectedExceptionRegExp(
-            \ShopgateLibraryException::class, '/language code \[.*?\] does not exist/',
-            \ShopgateLibraryException::PLUGIN_DATABASE_ERROR
+            'ShopgateLibraryException', '/language code \[.*?\] does not exist/',
+            ShopgateLibraryException::PLUGIN_DATABASE_ERROR
         );
 
         $this->subjectUnderTest->startup();
@@ -109,14 +108,14 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
 
     public function getInvalidLanguageResultFixtures()
     {
-        return [
-            [[]],
-            [['languages_id' => null]],
-            [['languages_id' => '']],
-            [['languages_id' => 'DE', 'directory' => null]],
-            [['languages_id' => 'DE', 'directory' => '']],
-            [['directory' => '/home/']],
-        ];
+        return array(
+            array(array()),
+            array(array('languages_id' => null)),
+            array(array('languages_id' => '')),
+            array(array('languages_id' => 'DE', 'directory' => null)),
+            array(array('languages_id' => 'DE', 'directory' => '')),
+            array(array('directory' => '/home/')),
+        );
     }
 
     public function testWhenPluginIsStartedAndShopNumberIsAvailableConfigIsLoadedByProvidedShopNumber()
@@ -135,9 +134,8 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
         $_REQUEST['shop_number'] = $shopNumber;
 
         // expecting it to limit the scope of the test
-        $this->setExpectedException(\ShopgateLibraryException::class);
+        $this->setExpectedException('ShopgateLibraryException');
 
         $this->subjectUnderTest->startup();
     }
-
 }

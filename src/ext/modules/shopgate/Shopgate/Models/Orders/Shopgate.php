@@ -357,11 +357,11 @@ class Shopgate_Models_Orders_Shopgate extends Shopgate_Models_Abstract_Db_Collec
             $type      = '';
             switch ($total['class']) {
                 case 'ot_subtotal':
-                case 'ot_tax' :
+                case 'ot_tax':
                     break;
-                case 'ot_total' :
+                case 'ot_total':
                     break;
-                case 'ot_shipping' :
+                case 'ot_shipping':
                     $type = 'shipping';
                     break;
                 default:

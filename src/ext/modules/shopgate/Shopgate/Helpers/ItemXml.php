@@ -21,7 +21,6 @@
  */
 class Shopgate_Helpers_ItemXml extends Shopgate_Helpers_Item
 {
-
     public function setUid()
     {
         parent::setUid($this->item['products_id']);
@@ -215,7 +214,8 @@ class Shopgate_Helpers_ItemXml extends Shopgate_Helpers_Item
             $inputOptions = array();
             $firstElement = reset($inputs);
             /** @var Shopgate_Model_Catalog_Input $inputModel */
-            $inputModel = new Shopgate_Model_Catalog_Input();;
+            $inputModel = new Shopgate_Model_Catalog_Input();
+
             $inputModel->setUid($firstElement['options_id']);
             $inputModel->setType(Shopgate_Model_Catalog_Input::DEFAULT_INPUT_TYPE_SELECT);
             $inputModel->setLabel($firstElement['products_options_name']);

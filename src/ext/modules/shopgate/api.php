@@ -76,7 +76,8 @@ if (!empty($shopgateSwisscartVersion)) {
         require(rtrim(DIR_WS_CLASSES, "/") . '/currencies.php');
     }
     if (!function_exists('tep_get_products_special_price')) {
-        function tep_get_products_special_price($product_id) {
+        function tep_get_products_special_price($product_id)
+        {
             $product_query = tep_db_query("select specials_new_products_price from " . TABLE_SPECIALS . " where products_id = '" . (int)$product_id . "' and status = 1");
             $product = tep_db_fetch_array($product_query);
 

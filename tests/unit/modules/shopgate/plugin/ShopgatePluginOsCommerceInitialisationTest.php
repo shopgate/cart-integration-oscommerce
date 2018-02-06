@@ -19,16 +19,15 @@
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
 
-namespace shopgate\plugin;
 
-class ShopgatePluginOsCommerceInitialisationTest extends \PHPUnit_Framework_TestCase
+class ShopgatePluginOsCommerceInitialisationTest extends PHPUnit_Framework_TestCase
 {
     public function testWhenPluginIsInitialisedLanguageIsSet()
     {
-        /** @var \ShopgatePluginOsCommerce|\PHPUnit_Framework_MockObject_MockObject $subjectUnderTest */
-        $subjectUnderTest = $this->getMockBuilder(\ShopgatePluginOsCommerce::class)
+        /** @var ShopgatePluginOsCommerce|PHPUnit_Framework_MockObject_MockObject $subjectUnderTest */
+        $subjectUnderTest = $this->getMockBuilder(ShopgatePluginOsCommerce::class)
                                  ->disableOriginalConstructor()
-                                 ->setMethods(['startup'])
+                                 ->setMethods(array('startup'))
                                  ->getMock()
         ;
 
@@ -36,7 +35,7 @@ class ShopgatePluginOsCommerceInitialisationTest extends \PHPUnit_Framework_Test
 
         $subjectUnderTest->setLanguageId($assumedLanguageId);
 
-        $diMock = $this->getMockBuilder(\tad_DI52_Container::class)
+        $diMock = $this->getMockBuilder(tad_DI52_Container::class)
                        ->disableOriginalConstructor()
                        ->getMock()
         ;
@@ -46,6 +45,6 @@ class ShopgatePluginOsCommerceInitialisationTest extends \PHPUnit_Framework_Test
                ->with('language_id', $assumedLanguageId)
         ;
 
-        $subjectUnderTest->init(['di' => $diMock]);
+        $subjectUnderTest->init(array('di' => $diMock));
     }
 }

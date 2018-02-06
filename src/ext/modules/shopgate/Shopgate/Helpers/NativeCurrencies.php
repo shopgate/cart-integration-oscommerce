@@ -35,7 +35,7 @@ class Shopgate_Helpers_NativeCurrencies extends currencies
      *
      * @return float|string
      */
-    function calculate_price($products_price, $products_tax, $quantity = 1)
+    public function calculate_price($products_price, $products_tax, $quantity = 1)
     {
         if (method_exists('currencies', __FUNCTION__)) {
             return parent::calculate_price($products_price, $products_tax, $quantity);

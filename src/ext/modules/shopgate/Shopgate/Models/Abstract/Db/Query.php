@@ -32,7 +32,7 @@ class Shopgate_Models_Abstract_Db_Query extends Shopgate_Models_Abstract_Object
     public function __construct()
     {
         $adapter = new Shopgate_Models_Abstract_Db_Adapter(
-            array (
+            array(
                 'dbname'   => '',
                 'password' => '',
                 'username' => ''

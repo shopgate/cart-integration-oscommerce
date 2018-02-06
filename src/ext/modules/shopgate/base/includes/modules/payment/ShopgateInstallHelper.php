@@ -106,7 +106,6 @@ class ShopgateInstallHelper
      */
     private function getStoreHolderInformation()
     {
-
         $keyQuery = 'SELECT configuration_key,configuration_value FROM '
             . TABLE_CONFIGURATION . ' as c
 						 WHERE c.configuration_key = "'
@@ -123,7 +122,6 @@ class ShopgateInstallHelper
 
         while ($row = tep_db_fetch_array($result)) {
             if (array_key_exists('configuration_value', $row)) {
-
                 if ($row['configuration_key'] == "STORE_OWNER_EMAIL_ADDRESS") {
                     $storeHolderInformation['contact_email'] =
                         $row['configuration_value'];

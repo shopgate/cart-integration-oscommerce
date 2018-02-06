@@ -431,8 +431,8 @@ elseif ($_GET["sg_option"] === "config"): ?>
                         value="<?php echo $sgLanguage['code']; ?>"<?php if ($sgLanguage['code']
                         == $sg_language
                     ) {
-                        echo ' selected="selected"';
-                    } ?>>
+                     echo ' selected="selected"';
+                 } ?>>
                         - <?php echo $sgLanguage['name']; ?>
                     </option>
                 <?php endforeach; ?>
@@ -443,15 +443,15 @@ elseif ($_GET["sg_option"] === "config"): ?>
             <input type="checkbox" name="sg_global_switch" value="1"
                    onclick="sgToggleSettings(this)"
                    id="sg_global_switch" <?php if (!empty($sgUseGlobalConfig)) {
-                echo 'checked="checked"';
-            } ?> />
+                     echo 'checked="checked"';
+                 } ?> />
             <label
                 for="sg_global_switch"><?php echo SHOPGATE_CONFIG_USE_GLOBAL_CONFIG; ?></label>
         <?php endif; ?>
     <?php endif; ?>
     <table id="sg_settings" <?php if (!empty($sgUseGlobalConfig)) {
-        echo 'style="display: none;';
-    } ?>>
+                     echo 'style="display: none;';
+                 } ?>>
     <tr>
         <td colspan="2">&nbsp;</td>
     </tr>
@@ -1144,8 +1144,8 @@ elseif ($_GET["sg_option"] === "config"): ?>
                                     <option <?php if ($shopgateConfig['encoding']
                                         == $encoding
                                     ) {
-                                        echo 'selected="selected"';
-                                    } ?>>
+                        echo 'selected="selected"';
+                    } ?>>
                                         <?php echo $encoding; ?>
                                     </option>
                                 <?php endforeach; ?>

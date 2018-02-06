@@ -19,14 +19,14 @@
  * @license   http://www.apache.org/licenses/LICENSE-2.0 Apache License, Version 2.0
  */
 
-class Shopgate_Models_Abstract_Db_Adapter extends Zend_Db_Adapter_Mysqli {
+class Shopgate_Models_Abstract_Db_Adapter extends Zend_Db_Adapter_Mysqli
+{
 
     /**
      * @inheritdoc
      */
     protected function _connect()
     {
-
     }
 
     /**
@@ -42,5 +42,4 @@ class Shopgate_Models_Abstract_Db_Adapter extends Zend_Db_Adapter_Mysqli {
 
         return "'" . addcslashes($value, "\000\n\r\\'\"\032") . "'";
     }
-
 }

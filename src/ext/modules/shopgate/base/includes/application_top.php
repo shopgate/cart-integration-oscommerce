@@ -29,7 +29,6 @@ if (defined('MODULE_PAYMENT_INSTALLED')
     require_once(dirname(__FILE__) . '/../shopgate_config.php');
 
     try {
-
         if (empty($_SESSION['languages_id']) && ($_SESSION['languages_id'] !== 0)) {
             $_SESSION['languages_id'] = !empty($languages_id) ? $languages_id : 0;
         }

@@ -271,4 +271,3 @@ define(
     . 'Please reply to this email if you have any questions.' . "\n"
 );
 define('EMAIL_TEXT_COMMENTS_UPDATE', 'The comments for your order are' . "\n\n%s\n\n");
-

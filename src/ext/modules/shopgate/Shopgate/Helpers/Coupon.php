@@ -333,7 +333,6 @@ class Shopgate_Helpers_Coupon
                     $coupon->setNotValidMessage('Some or all of the manufacturers in your cart are excluded');
                     continue(2);
                 }
-
             } // EOF product iteration
 
             /* excluded customers*/

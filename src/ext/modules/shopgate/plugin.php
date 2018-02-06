@@ -363,7 +363,7 @@ class ShopgatePluginOsCommerce extends ShopgatePlugin
          * @var Shopgate_Models_Address_Book[] $customerAddresses
          */
         $customerAddresses = array();
-        foreach($collection as $key => $customerAddress) {
+        foreach ($collection as $key => $customerAddress) {
             if ($customerAddress->getData('address_book_id') == $dbCustomer->getCustomersDefaultAddressId()) {
                 $customerAddresses[0] = $customerAddress;
             } else {
@@ -927,7 +927,7 @@ class ShopgatePluginOsCommerce extends ShopgatePlugin
      */
     public function getSettings()
     {
-    // fake customer group as OsCommerce doesn't have such a feature
+        // fake customer group as OsCommerce doesn't have such a feature
         $customerGroup                 = array(
             'id'                     => 1,
             'name'                   => 'default',
@@ -1967,7 +1967,6 @@ class ShopgatePluginOsCommerce extends ShopgatePlugin
 
         // Compute all values
         foreach ($aOrdersItems as $aSingleItem) {
-
             $positionValue      = $aSingleItem['final_price'] * $aSingleItem['products_quantity'];
             $positionTaxPercent = $aSingleItem['products_tax'];
             $positionTax        = $positionValue * $positionTaxPercent / 100;
@@ -3016,7 +3015,6 @@ class ShopgatePluginOsCommerce extends ShopgatePlugin
         }
 
         while ($shopgateOrder = ShopgateWrapper::db_fetch_array($result)) {
-
             if (!$this->setOrderShippingCompleted(
                 $shopgateOrder, $shopgateOrder['orders_id'], $this->merchantApi, $this->config
             )
@@ -3154,7 +3152,6 @@ class ShopgatePluginOsCommerce extends ShopgatePlugin
         ShopgateMerchantApi &$merchantApi,
         ShopgateConfigOsCommerce &$config
     ) {
-
         $success = false;
         // These are expected and should not be added to error count:
         //Order already cancelled
@@ -3188,7 +3185,6 @@ class ShopgatePluginOsCommerce extends ShopgatePlugin
                 $shopgateOrderObject = reset(
                     $sgRequestedOrders
                 );// there can be only one order. cause only one was requested
-
             } else {
                 $shopgateOrderObject = unserialize(
                     $shopgateOrder["order_data"]

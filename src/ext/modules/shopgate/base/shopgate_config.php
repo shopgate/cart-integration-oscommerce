@@ -399,7 +399,6 @@ class ShopgateConfigOsCommerce extends ShopgateConfig
     {
         return __DIR__ . '/../data';
     }
-
 }
 
 /**
