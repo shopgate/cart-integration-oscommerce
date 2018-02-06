@@ -20,7 +20,7 @@
  */
 
 
-class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
+class ShopgatePluginOsCommerceStartupTest extends PHPUnit_Framework_TestCase
 {
     /** @var ShopgateConfigOsCommerce|PHPUnit_Framework_MockObject_MockObject */
     private $shopgateConfigOsCommerceMock;
@@ -36,8 +36,8 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
         defined('TABLE_CURRENCIES') ? : define('TABLE_CURRENCIES', 'mock_currency');
         defined('TABLE_TAX_RATES') ? : define('TABLE_TAX_RATES', 'mock_tax_rate');
 
-        $this->shopgateConfigOsCommerceMock = $this->getMock(ShopgateConfigOsCommerce::class);
-        $this->subjectUnderTest             = $this->getMockBuilder(ShopgatePluginOsCommerce::class)
+        $this->shopgateConfigOsCommerceMock = $this->getMock('ShopgateConfigOsCommerce');
+        $this->subjectUnderTest             = $this->getMockBuilder('ShopgatePluginOsCommerce')
                                                    ->disableOriginalConstructor()
                                                    ->setMethods(
                                                        array(
@@ -66,7 +66,7 @@ class ShopgatePluginOsCommerceStartupTest extends \PHPUnit_Framework_TestCase
         ;
 
         $this->setExpectedExceptionRegExp(
-            ShopgateLibraryException::class, '/Error selecting language/',
+            'ShopgateLibraryException', '/Error selecting language/',
             ShopgateLibraryException::PLUGIN_DATABASE_ERROR
         );
 

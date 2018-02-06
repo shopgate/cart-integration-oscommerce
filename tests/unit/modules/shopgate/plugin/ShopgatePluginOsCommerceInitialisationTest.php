@@ -25,7 +25,7 @@ class ShopgatePluginOsCommerceInitialisationTest extends PHPUnit_Framework_TestC
     public function testWhenPluginIsInitialisedLanguageIsSet()
     {
         /** @var ShopgatePluginOsCommerce|PHPUnit_Framework_MockObject_MockObject $subjectUnderTest */
-        $subjectUnderTest = $this->getMockBuilder(ShopgatePluginOsCommerce::class)
+        $subjectUnderTest = $this->getMockBuilder('ShopgatePluginOsCommerce')
                                  ->disableOriginalConstructor()
                                  ->setMethods(array('startup'))
                                  ->getMock()
@@ -35,7 +35,7 @@ class ShopgatePluginOsCommerceInitialisationTest extends PHPUnit_Framework_TestC
 
         $subjectUnderTest->setLanguageId($assumedLanguageId);
 
-        $diMock = $this->getMockBuilder(tad_DI52_Container::class)
+        $diMock = $this->getMockBuilder('tad_DI52_Container')
                        ->disableOriginalConstructor()
                        ->getMock()
         ;
